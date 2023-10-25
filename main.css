@@ -1,9 +1,273 @@
-* {
-    margin: 0;
-    padding: 0;
+:root {
+	/* Brand Colors */
+	--primary-100: hsl(199, 8%, 99%);
+	--primary-200: hsl(198, 45%, 94%);
+	--primary-300: hsl(199, 33%, 84%);
+	--primary-400: hsl(199, 36%, 78%);
+	--primary-500: hsl(199, 29%, 68%);
+	--primary-600: hsl(199, 31%, 46%);
+	--primary-700: hsl(199, 48%, 34%);
+	--primary-800: hsl(198, 66%, 18%);
+	--primary-900: hsl(198, 83%, 12%);
+
+	--secondary: hsl(43, 26%, 93%);
+
+	/* Supporting Colors */
+	--success: hsl(111, 29%, 68%);
+
+	--warning: hsl(64, 29%, 68%);
+
+	--danger: hsl(7, 29%, 68%);
+
+	--info: hsl(180, 33%, 70%);
+
+	/* Neutral Colors */
+	--gray-100: #f8fafc;
+	--gray-200: #f1f5f9;
+	--gray-300: #e2e8f0;
+	--gray-400: #cbd5e1;
+	--gray-500: #94a3b8;
+	--gray-600: #64748b;
+	--gray-700: #475569;
+	--gray-800: #334155;
+	--gray-900: #1e293b;
 }
 
-body {
-    height: 100%;
-    width: 100%;
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Inter";
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+button {
+	border: none;
+	background: none;
+}
+
+.container {
+	background-color: var(--gray-200);
+	display: grid;
+	grid-template-columns: 300px 1fr;
+	grid-template-rows: auto 1fr;
+}
+
+/* Sidebar */
+.sidebar {
+	grid-area: 1 / 1 / 3 / 2;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	padding: 1rem;
+	background-color: var(--gray-200);
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	background-color: var(--primary-500);
+	padding: 0.8rem;
+	border-radius: 1rem;
+}
+
+.logo--image {
+	font-weight: 800;
+	font-size: 1.5rem;
+	color: var(--primary-100);
+}
+
+.logo--name {
+	font-weight: 800;
+	font-size: 1.8rem;
+	color: var(--primary-100);
+}
+ul {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	padding-left: 1rem;
+}
+
+.links {
+	margin-top: 2rem;
+}
+li {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+/* Header */
+header {
+	grid-area: 1 / 2 / 2 / 3;
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	gap: 10rem;
+	padding: 1rem;
+	margin: 1rem;
+	background-color: var(--gray-300);
+	border-radius: 0.5rem;
+}
+
+.actions {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.search {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}
+
+.search--input {
+	flex: 1;
+}
+
+.profile {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+
+.profile--user-image {
+	margin-left: 20px;
+}
+
+/* Main */
+main {
+	grid-area: 2 / 2 / 3 / 3;
+	display: grid;
+	grid-template-columns: 6fr 2fr;
+	grid-template-rows: auto auto 1fr;
+	gap: 10px;
+	margin: 1rem;
+	font-family: "Sometype Mono";
+}
+
+.right-side {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.section--welcome {
+	grid-area: 1 / 1 / 2 / 3;
+	background-color: var(--gray-300);
+	display: grid;
+	grid-template-columns: auto 1fr;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	gap: 5px 20px;
+}
+
+.welcome--user-image {
+	grid-area: 1 / 1 / 3 / 2;
+	align-self: center;
+	background-color: var(--success);
+	border-radius: 50%;
+	font-size: 2rem;
+	padding: 1rem;
+	height: 2rem;
+	width: 2rem;
+}
+
+.welcome--message {
+	align-self: flex-end;
+	font-weight: 600;
+	font-size: 0.75rem;
+}
+
+.welcome--user {
+	align-self: flex-start;
+	font-size: 1.3rem;
+	font-weight: 600;
+}
+
+.section--projects {
+	grid-area: 2 / 1 / 3 / 2;
+	background-color: var(--gray-300);
+	display: grid;
+	grid-template-rows: auto 1fr;
+	padding: 2rem;
+}
+
+.card-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	gap: 1rem;
+}
+
+.card {
+	padding: 2rem;
+	display: grid;
+	grid-template-rows: auto auto 1fr;
+	height: min(250px);
+	gap: 5px;
+	font-family: "Sometype Mono";
+	font-weight: 400;
+	line-height: 1.5rem;
+}
+
+.card--actions {
+	justify-self: end;
+	align-self: end;
+	display: flex;
+	gap: 30px;
+	font-size: 1.3rem;
+}
+
+.section--announcements {
+	grid-area: 1 / 1 / 2 / 2;
+	background-color: var(--gray-300);
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	height: fit-content;
+}
+
+.announcements--card {
+	display: grid;
+	grid-template-rows: repeat(auto, 5);
+	gap: 20px;
+	font-size: 0.9rem;
+}
+
+.divider {
+	border-bottom: 1px solid var(--primary-500);
+}
+
+.section--tasks {
+	grid-area: 2 / 1 / 3 / 2;
+	background-color: var(--gray-300);
+	padding: 2rem;
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-template-rows: auto auto;
+	gap: 1rem;
+}
+
+.view-all {
+	justify-self: end;
+}
+
+.tasks--list {
+	grid-row: 2 / 3;
+	grid-column: 1 / 3;
+}
+
+.tasks--item {
+	display: flex;
+	justify-content: space-between;
+	padding: 1rem 0;
 }
