@@ -407,7 +407,7 @@ main {
 	cursor: pointer;
 }
 
-.tasks--item input {
+.tasks--item div {
 	font-family: "Inter";
 	letter-spacing: 1px;
 	font-size: 1rem;
