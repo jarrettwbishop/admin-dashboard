@@ -1,3 +1,5 @@
+/* Page Setup */
+
 :root {
 	/* Brand Colors */
 	--primary-100: hsl(199, 8%, 99%);
@@ -22,21 +24,20 @@
 	--info: hsl(180, 33%, 70%);
 
 	/* Neutral Colors */
-	--gray-100: #f8fafc;
-	--gray-200: #f1f5f9;
-	--gray-300: #e2e8f0;
-	--gray-400: #cbd5e1;
-	--gray-500: #94a3b8;
-	--gray-600: #64748b;
-	--gray-700: #475569;
-	--gray-800: #334155;
-	--gray-900: #1e293b;
+	--gray-100: #f5f5f5;
+	--gray-200: #e5e5e5;
+	--gray-300: #d4d4d4;
+	--gray-400: #a3a3a3;
+	--gray-500: #737373;
+	--gray-600: #525252;
+	--gray-700: #404040;
+	--gray-800: #262626;
+	--gray-900: #171717;
 }
 
 * {
 	margin: 0;
 	padding: 0;
-	font-family: "Inter";
 }
 
 li {
@@ -52,11 +53,25 @@ button {
 	background: none;
 }
 
+h1 {
+	text-transform: uppercase;
+	font-family: "Inter";
+	color: var(--gray-800);
+	font-weight: 800;
+	letter-spacing: 1px;
+	font-size: 1.2rem;
+}
+
+.fa-user {
+	color: var(--gray-200);
+}
+
 .container {
 	background-color: var(--gray-200);
 	display: grid;
 	grid-template-columns: 300px 1fr;
 	grid-template-rows: auto 1fr;
+	position: relative;
 }
 
 /* Sidebar */
@@ -65,34 +80,49 @@ button {
 	display: grid;
 	grid-template-rows: auto 1fr auto;
 	padding: 1rem;
-	background-color: var(--gray-200);
+	background-color: var(--primary-400);
+	font-family: "Sometype Mono";
+	margin: 1rem;
+	border-radius: 1rem;
+	height: 92vh;
+	position: fixed;
 }
 
 .logo {
 	display: flex;
+	justify-content: center;
 	align-items: center;
-	gap: 1rem;
-	background-color: var(--primary-500);
+	gap: 0.5rem;
+	background-color: var(--gray-800);
 	padding: 0.8rem;
 	border-radius: 1rem;
 }
 
 .logo--image {
 	font-weight: 800;
-	font-size: 1.5rem;
-	color: var(--primary-100);
+	font-size: 1.3rem;
+	color: var(--primary-500);
 }
 
 .logo--name {
-	font-weight: 800;
-	font-size: 1.8rem;
-	color: var(--primary-100);
+	font-family: "Sometype Mono";
+	font-weight: 900;
+	font-size: 1.7rem;
+	color: var(--primary-500);
+	text-transform: uppercase;
+	word-spacing: -10px;
 }
 ul {
 	display: flex;
 	flex-direction: column;
 	gap: 1.5rem;
 	padding-left: 1rem;
+	font-family: "Inter";
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	font-size: 0.6rem;
+	font-weight: 100;
+	color: var(--gray-800);
 }
 
 .links {
@@ -104,16 +134,30 @@ li {
 	gap: 1rem;
 }
 
+.nav--icon {
+	font-size: 1.2rem;
+}
+
+.nav--icon.fa-user {
+	color: var(--gray-800);
+}
+
+.active {
+}
+
 /* Header */
 header {
 	grid-area: 1 / 2 / 2 / 3;
 	display: grid;
 	grid-template-columns: auto 1fr auto;
 	gap: 10rem;
-	padding: 1rem;
+	padding: 0.8rem 1rem;
 	margin: 1rem;
-	background-color: var(--gray-300);
-	border-radius: 0.5rem;
+	background-color: var(--gray-100);
+	border-radius: 1rem;
+	color: var(--gray-800);
+	font-family: "Inter";
+	font-weight: 600;
 }
 
 .actions {
@@ -131,6 +175,14 @@ header {
 
 .search--input {
 	flex: 1;
+	border: none;
+	border-radius: 1rem;
+	text-align: right;
+	padding: 0.5rem 1rem;
+	background-color: var(--gray-200);
+	color: var(--gray-500);
+	font-family: "Inter";
+	font-weight: 700;
 }
 
 .profile {
@@ -141,6 +193,13 @@ header {
 
 .profile--user-image {
 	margin-left: 20px;
+	align-self: center;
+	background-color: var(--success);
+	border-radius: 50%;
+	font-size: 2rem;
+	padding: 0.5rem;
+	height: 1rem;
+	width: 1rem;
 }
 
 /* Main */
@@ -149,7 +208,7 @@ main {
 	display: grid;
 	grid-template-columns: 6fr 2fr;
 	grid-template-rows: auto auto 1fr;
-	gap: 10px;
+	gap: 30px 10px;
 	margin: 1rem;
 	font-family: "Sometype Mono";
 }
@@ -157,15 +216,15 @@ main {
 .right-side {
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
+	gap: 3rem 10px;
+	margin-left: 1rem;
+	min-width: 300px;
 }
 
 .section--welcome {
 	grid-area: 1 / 1 / 2 / 3;
-	background-color: var(--gray-300);
 	display: grid;
 	grid-template-columns: auto 1fr;
-	padding: 1rem;
 	border-radius: 0.5rem;
 	gap: 5px 20px;
 }
@@ -185,20 +244,23 @@ main {
 	align-self: flex-end;
 	font-weight: 600;
 	font-size: 0.75rem;
+	color: var(--gray-600);
 }
 
 .welcome--user {
+	font-family: "Inter";
 	align-self: flex-start;
 	font-size: 1.3rem;
-	font-weight: 600;
+	font-weight: 700;
+	letter-spacing: 1px;
+	color: var(--gray-800);
 }
 
 .section--projects {
 	grid-area: 2 / 1 / 3 / 2;
-	background-color: var(--gray-300);
 	display: grid;
 	grid-template-rows: auto 1fr;
-	padding: 2rem;
+	gap: 1rem;
 }
 
 .card-container {
@@ -211,11 +273,26 @@ main {
 	padding: 2rem;
 	display: grid;
 	grid-template-rows: auto auto 1fr;
-	height: min(250px);
+	min-height: 250px;
 	gap: 5px;
 	font-family: "Sometype Mono";
 	font-weight: 400;
 	line-height: 1.5rem;
+	background-color: var(--gray-100);
+	border-radius: 1rem;
+}
+
+.card h2 {
+	text-transform: uppercase;
+	font-family: "Inter";
+	font-weight: 800;
+	letter-spacing: 1px;
+	font-size: 1.1rem;
+	color: var(--gray-700);
+}
+
+.card p {
+	color: var(--gray-700);
 }
 
 .card--actions {
@@ -224,12 +301,11 @@ main {
 	display: flex;
 	gap: 30px;
 	font-size: 1.3rem;
+	color: var(--gray-700);
 }
 
 .section--announcements {
 	grid-area: 1 / 1 / 2 / 2;
-	background-color: var(--gray-300);
-	padding: 2rem;
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
@@ -241,6 +317,29 @@ main {
 	grid-template-rows: repeat(auto, 5);
 	gap: 20px;
 	font-size: 0.9rem;
+
+	background-color: var(--gray-100);
+	padding: 2rem;
+	border-radius: 1rem;
+}
+
+.announcements--card h3 {
+	text-transform: uppercase;
+	font-family: "Inter";
+	font-weight: 800;
+	letter-spacing: 1px;
+	font-size: 1rem;
+	color: var(--gray-700);
+}
+
+.announcements--card p {
+	color: var(--gray-700);
+}
+
+.announcements--item {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 }
 
 .divider {
@@ -249,8 +348,6 @@ main {
 
 .section--tasks {
 	grid-area: 2 / 1 / 3 / 2;
-	background-color: var(--gray-300);
-	padding: 2rem;
 	display: grid;
 	grid-template-columns: auto auto;
 	grid-template-rows: auto auto;
@@ -264,10 +361,52 @@ main {
 .tasks--list {
 	grid-row: 2 / 3;
 	grid-column: 1 / 3;
+	background-color: var(--gray-100);
+	padding: 2rem;
+	border-radius: 1rem;
 }
 
 .tasks--item {
-	display: flex;
-	justify-content: space-between;
+	display: grid;
+	grid-template-columns: auto 1fr auto;
 	padding: 1rem 0;
+	align-items: center;
+	gap: 10px;
+}
+
+.tasks--item:hover {
+	cursor: pointer;
+}
+
+.tasks--item input {
+	font-family: "Inter";
+	letter-spacing: 1px;
+	font-size: 1rem;
+	font-weight: 600;
+	color: var(--gray-800);
+}
+
+.tasks--item p {
+	font-size: 0.8rem;
+	font-weight: 900;
+	text-transform: uppercase;
+	color: var(--gray-800);
+}
+
+.new {
+	background-color: var(--success);
+	padding: 0.3rem 1rem;
+	border-radius: 1rem;
+}
+
+.urgent {
+	background-color: var(--warning);
+	padding: 0.3rem 1rem;
+	border-radius: 1rem;
+}
+
+.past-due {
+	background-color: var(--danger);
+	padding: 0.3rem 1rem;
+	border-radius: 1rem;
 }
