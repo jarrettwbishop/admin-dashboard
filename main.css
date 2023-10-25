@@ -86,6 +86,7 @@ h1 {
 	border-radius: 1rem;
 	height: 92vh;
 	position: fixed;
+	box-shadow: 0 0 5px 1px var(--gray-300);
 }
 
 .logo {
@@ -115,7 +116,6 @@ h1 {
 ul {
 	display: flex;
 	flex-direction: column;
-	gap: 1.5rem;
 	padding-left: 1rem;
 	font-family: "Inter";
 	letter-spacing: 1px;
@@ -132,6 +132,15 @@ li {
 	display: flex;
 	align-items: center;
 	gap: 1rem;
+	padding: 1rem;
+}
+
+li:hover .fa-user,
+li:hover {
+	cursor: pointer;
+	background-color: var(--gray-800);
+	color: var(--primary-400);
+	border-radius: 1rem;
 }
 
 .nav--icon {
@@ -158,12 +167,24 @@ header {
 	color: var(--gray-800);
 	font-family: "Inter";
 	font-weight: 600;
+	box-shadow: 0 0 5px 1px var(--gray-300);
 }
 
 .actions {
 	display: flex;
 	align-items: center;
 	gap: 20px;
+}
+
+.actions--btn {
+	height: 20px;
+	width: 20px;
+}
+
+.actions--btn:hover {
+	cursor: pointer;
+	background-color: var(--primary-400);
+	border-radius: 50%;
 }
 
 .search {
@@ -280,6 +301,12 @@ main {
 	line-height: 1.5rem;
 	background-color: var(--gray-100);
 	border-radius: 1rem;
+	box-shadow: 0 0 5px 1px var(--gray-300);
+}
+
+.card:hover {
+	box-shadow: 0 0 8px 3px var(--primary-400);
+	cursor: pointer;
 }
 
 .card h2 {
@@ -321,6 +348,7 @@ main {
 	background-color: var(--gray-100);
 	padding: 2rem;
 	border-radius: 1rem;
+	box-shadow: 0 0 5px 1px var(--gray-300);
 }
 
 .announcements--card h3 {
@@ -364,6 +392,7 @@ main {
 	background-color: var(--gray-100);
 	padding: 2rem;
 	border-radius: 1rem;
+	box-shadow: 0 0 5px 1px var(--gray-300);
 }
 
 .tasks--item {
